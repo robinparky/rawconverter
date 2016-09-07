@@ -20,7 +20,7 @@ namespace RawConverter.Converter
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             string msnHeader = "H\tCreation Date\t" + DateTime.Now.ToString() + "\n"
                 + "H\tExtractor\tRawConverter\n"
-                + "H\tExtractorVersion\t1.0.0.1\n"
+                + "H\tExtractorVersion\t1.1.0.18\n"
                 + "H\tComments\tRawConverter written by Lin He, 2014\n"
                 + "H\tComments\tRawConverter modified by Yen-Yin Chu, 2015\n"
                 + "H\tComments\tRawConverter modified by Rohan Rampuria, 2016\n"
