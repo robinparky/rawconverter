@@ -79,8 +79,9 @@ namespace RawConverter.Converter
 
         public RawFileConverter(string rawFile, string outFolder, string[] outFileTypes, ExperimentType expType, bool exportChargeState)
         {
+           
             _rawReader = (IXRawfile5)new MSFileReader_XRawfile();
-            //Console.WriteLine("_rawReader created successfully.");
+            Console.WriteLine("_rawReader created successfully.");
             int pnMajorVersion = -1, pnMinorVersion = -1, pnSubMinorVersion = -1, nBuilderNumber = -1;
             _rawReader.Version(ref pnMajorVersion, ref pnMinorVersion, ref pnSubMinorVersion, ref nBuilderNumber);
             Console.WriteLine("pnMajorVersion = " + pnMajorVersion);
@@ -97,7 +98,7 @@ namespace RawConverter.Converter
             // get the numbers of the first and the last scans used in MSn file headers;
             _rawReader.GetFirstSpectrumNumber(ref FirstScanNum);
             _rawReader.GetLastSpectrumNumber(ref LastScanNum);
-
+            outFolder = Path.GetDirectoryName(rawFile);
             InitWriters(Path.GetFileName(rawFile), outFolder, outFileTypes, expType, exportChargeState);
 
             this.expType = expType;

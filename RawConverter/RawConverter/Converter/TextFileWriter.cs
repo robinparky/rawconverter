@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Globalization;
 
 namespace RawConverter.Converter
 {
@@ -15,11 +17,13 @@ namespace RawConverter.Converter
         public static void WriteMSnHeader(StreamWriter writer, String msType, int scanCount, MassSpectrum spec)
         {
             // MSn header format;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             string msnHeader = "H\tCreation Date\t" + DateTime.Now.ToString() + "\n"
                 + "H\tExtractor\tRawConverter\n"
-                + "H\tExtractorVersion\t1.0.0.x\n"
+                + "H\tExtractorVersion\t1.0.0.1\n"
                 + "H\tComments\tRawConverter written by Lin He, 2014\n"
                 + "H\tComments\tRawConverter modified by Yen-Yin Chu, 2015\n"
+                + "H\tComments\tRawConverter modified by Rohan Rampuria, 2016\n"
                 + "H\tExtractorOptions\tMSn\n"
                 + "H\tAcquisitionMethod\tData-Dependent\n"
                 + "H\tInstrumentType\t" + spec.InstrumentType + "\n"
