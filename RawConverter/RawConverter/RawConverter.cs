@@ -327,7 +327,7 @@ namespace RawConverter
             {
                 Console.WriteLine(" Parsing MS2 file: " + inFile + " . . . ");
                 LogList.Add(" Parsing MS2 file: " + inFile + " . . . ");
-                MS2Converter mc = new MS2Converter(inFile, OutFileFolder, outFileTypes);
+                MS2Converter mc = new MS2Converter(inFile, OutFileFolder, outFileTypes, correctPrecMz);
                 mc.SetOptions(MzDecimalPlace, IntensityDecimalPlace);
                 mc.Convert(ExtractProgress);
                 mc.Close();

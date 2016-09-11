@@ -115,7 +115,7 @@ namespace RawConverter.Converter
                             }
 
                             // create a spectrum;
-                            spec = new MassSpectrum(scanNum, _xmlReader.GetAttribute("num"), retentionTime, new List<Ion>(), 0, instType, filter, 0);
+                            spec = new MassSpectrum(scanNum, _xmlReader.GetAttribute("num"), retentionTime, new List<Ion>(), 0, instType, filter, 0, false);
                             spec.MsLevel = msLevel;
                             spec.LowMz = lowMz;
                             spec.HighMz = highMz;

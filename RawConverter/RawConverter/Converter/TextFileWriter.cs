@@ -17,6 +17,7 @@ namespace RawConverter.Converter
         public static void WriteMSnHeader(StreamWriter writer, String msType, int scanCount, MassSpectrum spec)
         {
             // MSn header format;
+            
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
             string msnHeader = "H\tCreation Date\t" + DateTime.Now.ToString() + "\n"
                 + "H\tExtractor\tRawConverter\n"
@@ -32,7 +33,8 @@ namespace RawConverter.Converter
                 + "H\tResolution\n"
                 + "H\tIsolationWindow\n"
                 + "H\tFirstScan\t" + 1 + "\n"
-                + "H\tLastScan\t" + scanCount + "\n";
+                + "H\tLastScan\t" + scanCount + "\n"
+                +"H\tMonoIsotopic PrecMz\t" + spec.isMonoIsotopicPeakVal + "\n";
             writer.Write(msnHeader);
         }
 

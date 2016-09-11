@@ -37,7 +37,7 @@ namespace RawConverter.MassSpec
         public double TemperatureFTAnalyzer { get; set; }
         public double PrecursorIntensity { get; set; }
         public bool PrecursorRefined { get; set; }
-
+        public bool isMonoIsotopicPeakVal { get; set; }
         public double LowMz { get; set; }
         public double HighMz { get; set; }
         public double BasePeakMz { get; set; }
@@ -69,7 +69,8 @@ namespace RawConverter.MassSpec
             double ionInjectionTime,
             InstrumentType instrumentType,
             string filter,
-            double temperatureFTAnalyzer
+            double temperatureFTAnalyzer,
+            bool isMonoIsotopicPeak
             )
         {
             ScanNumber = scanNumber;
@@ -81,6 +82,7 @@ namespace RawConverter.MassSpec
             Filter = filter;
             TemperatureFTAnalyzer = temperatureFTAnalyzer;
             PrecursorRefined = false;
+            isMonoIsotopicPeakVal = isMonoIsotopicPeak;
         }
 
     }

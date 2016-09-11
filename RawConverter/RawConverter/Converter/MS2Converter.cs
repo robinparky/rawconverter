@@ -23,15 +23,16 @@ namespace RawConverter.Converter
         private int _spectrumProcessed = 0;
         private int _totalSpecNum = 0;
         private double _lastProgress = 0;
+        private bool isMonoIsotopic = false;
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public MS2Converter(string ms2File, string outFolder, string[] outFileTypes)
+        public MS2Converter(string ms2File, string outFolder, string[] outFileTypes, bool isMonoIsotopicPeak)
         {
             _ms2Reader = new StreamReader(File.Open(ms2File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
             _ms2File = ms2File;
-
+            isMonoIsotopic = isMonoIsotopicPeak;
             // get the number of spectra;
             string line = null;
             while ((line = _ms2Reader.ReadLine()) != null)
@@ -209,7 +210,7 @@ namespace RawConverter.Converter
             }
 
             peakList.Sort((a, b) => a.MZ.CompareTo(b.MZ));
-            MassSpectrum spec = new MassSpectrum(scanNumber, "", retTime, peakList, ionInjectionTime, InstrumentType.ELSE, "", 0);
+            MassSpectrum spec = new MassSpectrum(scanNumber, "", retTime, peakList, ionInjectionTime, InstrumentType.ELSE, "", 0, false);
             spec.Precursors = precursors;
             spec.PrecursorIntensity = precInt;
             spec.PrecursorScanNumber = precScan;

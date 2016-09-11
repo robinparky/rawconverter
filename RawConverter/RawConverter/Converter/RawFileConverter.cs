@@ -487,6 +487,7 @@ namespace RawConverter.Converter
             {
                 if (_isFirstMS2Scan)
                 {
+                    
                     TextFileWriter.WriteMSnHeader(_ms2Writer, "MS2", LastScanNum, spec);
                     _isFirstMS2Scan = false;
                 }
@@ -635,7 +636,8 @@ namespace RawConverter.Converter
                 ionInjectionTime,
                 instrumentType,
                 scanFilter,
-                analyzerTemperature);
+                analyzerTemperature,
+                correctPrecMz);
 
             // check the MS level;
             if (scanFilter.Contains(" ms "))

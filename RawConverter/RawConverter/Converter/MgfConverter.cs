@@ -340,7 +340,7 @@ namespace RawConverter.Converter
             }
 
             peakList.Sort((a, b) => a.MZ.CompareTo(b.MZ));
-            MassSpectrum spec = new MassSpectrum(scanNumber, "", retTime, peakList, 0, InstrumentType.ELSE, "", 0);
+            MassSpectrum spec = new MassSpectrum(scanNumber, "", retTime, peakList, 0, InstrumentType.ELSE, "", 0, false);
             spec.Precursors = precursors;
 
             return spec;

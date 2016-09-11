@@ -203,7 +203,7 @@ namespace RawConverter.Converter
                     }
 
                     //create a spectrum;
-                    spec = new MassSpectrum(scanNum, mzML.run.spectrumList.spectrum[i].index.Replace("\"", ""), retentionTime, new List<Ion>(), 0, instType, filter, 0);
+                    spec = new MassSpectrum(scanNum, mzML.run.spectrumList.spectrum[i].index.Replace("\"", ""), retentionTime, new List<Ion>(), 0, instType, filter, 0,false);
                     spec.MsLevel = msLevel;
                     spec.LowMz = lowMz;
                     spec.HighMz = highMz;
