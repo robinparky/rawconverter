@@ -11,8 +11,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <StartArguments>
-    </StartArguments>
+    <StartArguments>C:\Users\yateslab.PC-YatesLab\Desktop\rawfiles\08292016_Okumura_WT_1-01.RAW --mzXML --out_folder C:\Users\yateslab.PC-YatesLab\Desktop\</StartArguments>
     <StartAction>Project</StartAction>
     <StartProgram>C:\Users\yateslab.PC-YatesLab\Documents\RawConverter %281%29\RawConverter\RawConverter\bin\x64\Debug\RawConverter.exe</StartProgram>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>

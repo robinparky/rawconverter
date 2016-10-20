@@ -157,6 +157,10 @@ namespace RawConverter
                     {
                         rawXtract.logConverter = true;
                     }
+                    else if (args[i].ToLower().Contains("mzxml"))
+                    {
+                        rawXtract.mzXMLConverter = true;
+                    }
                     else if (args[i].ToLower().Contains("out_folder"))
                     {
                         if (++i >= args.Count())
@@ -224,14 +228,15 @@ namespace RawConverter
         public static void Usage()
         {
             Console.WriteLine("Usage:");
-            Console.WriteLine("\tRawXtract <input_file> [options]\trun the commandline version.");
+            Console.WriteLine("\tRawConverter.exe <input_file> [options]\trun the commandline version.");
             Console.WriteLine("\tOptions:");
             Console.WriteLine("\t\t--ms1\toutput MS1 file.");
             Console.WriteLine("\t\t--ms2\toutput MS2 file.");
+            Console.WriteLine("\t\t--mzxml\toutput mzXML file.");
             Console.WriteLine("\t\t--ms3\toutput MS3 file.");
             Console.WriteLine("\t\t--mgf\toutput MGF file.");
             Console.WriteLine("\t\t--log\toutput log file.");
-            Console.WriteLine("\t\t--out_folder\toutput folder.");
+            //Console.WriteLine("\t\t--out_folder\toutput folder.");
             Console.WriteLine("\t\t--select_mono_prec\tselect the monoisotopic m/z values of precursors in DDA data.");
             Console.WriteLine("\t\t--predict_precursors\tpredict the precursors for DIA data.");
         }
