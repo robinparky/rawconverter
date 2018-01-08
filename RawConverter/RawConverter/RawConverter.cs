@@ -204,6 +204,7 @@ namespace RawConverter
                             return;
                         }
                     }
+                    
                 }
 
                 // check the output folder;

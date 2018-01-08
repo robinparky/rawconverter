@@ -95,7 +95,7 @@ namespace RawConverter.Converter
                 //    _writer.Write(" precursorMz =\"" + prec.Item2 + "\">" + prec.Item1 + "</precursorMz>\n");
                 //}
             }
-            _writer.Write("\t\t<peaks precision=\"32\" byteOrder=\"network\" pairOrder=\"mz-int\">");
+            _writer.Write("\t\t<peaks precision=\"32\" byteOrder=\"network\" pairOrder=\"m/z-int\">");
             String strBase64 = ConvertPeaksToBase64(spec.Peaks, 32);
             _writer.Write(strBase64);
             _writer.Write("</peaks>\n\t</scan>\n");
